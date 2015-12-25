@@ -1,0 +1,17 @@
+{
+    "name": "dolphin-js-exporter-module",
+    "version": "0.0.2",
+    "description": "Js exporter",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/knodeit/dolphin-js-exporter-module"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-jshint": "~0.11.3",
+        "load-grunt-tasks": "~3.3.0",
+        "time-grunt": "~1.2.2"
+    }
+}
