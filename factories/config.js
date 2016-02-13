@@ -24,6 +24,9 @@ module.exports = {
                 obj: obj
             };
         },
+        deleteObject: function (name) {
+            delete objects[name];
+        },
         getObjects: function () {
             return objects;
         }
