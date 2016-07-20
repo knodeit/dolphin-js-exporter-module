@@ -2,6 +2,7 @@
  * Created by Vadim on 12/24/15.
  */
 'use strict';
+var isCronMode = require('dolphin-core').isCronMode();
 var Module = require('dolphin-core-modules').Module;
 var JsExporter = new Module('JsExporter', __dirname);
 var Q = require('q');
@@ -23,6 +24,11 @@ JsExporter.serializeObject = function (obj) {
 JsExporter.serializeObjectToRow = function (obj) {
     return '$dolphin.addObject(\'' + obj.name + '\', \'' + JsExporter.serializeObject(obj.obj) + '\');';
 };
+
+//don't run is cron mode
+if (isCronMode) {
+    return;
+}
 
 JsExporter.configureFactories(function (AssetManagerConfigurationFactory, WebServerConfigurationFactory) {
     WebServerConfigurationFactory.addPromise(deferred.promise);
